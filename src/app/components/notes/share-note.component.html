@@ -1,0 +1,13 @@
+<div class="p-4">
+  <h2 class="text-xl font-bold mb-4">Share Note</h2>
+  <label class="block mb-2">Select User</label>
+  <select [(ngModel)]="selectedUserId" class="border p-2 rounded w-full mb-4">
+    <option *ngFor="let user of users" [value]="user._id">{{ user.name }}</option>
+  </select>
+  <label class="block mb-2">Permission</label>
+  <select [(ngModel)]="permission" class="border p-2 rounded w-full mb-4">
+    <option value="read">Read Only</option>
+    <option value="write">Read & Write</option>
+  </select>
+  <button (click)="shareNote()" class="bg-green-500 text-white px-4 py-2 rounded">Share</button>
+</div>

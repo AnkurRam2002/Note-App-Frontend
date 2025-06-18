@@ -1,0 +1,15 @@
+<div class="p-4" *ngIf="note">
+  <h2 class="text-xl font-bold mb-4">Manage Sharing for "{{ note.title }}"</h2>
+
+  <div *ngIf="sharedUsers.length; else noShares">
+    <h3 class="text-lg mb-2">Shared With:</h3>
+    <div *ngFor="let user of sharedUsers" class="flex items-center justify-between border p-2 mb-2 rounded">
+      <div>{{ user.name }} ({{ user.email }})</div>
+      <button (click)="revokeAccess(user._id)" class="bg-red-500 text-white px-2 py-1 rounded">Revoke</button>
+    </div>
+  </div>
+
+  <ng-template #noShares>
+    <p>No users currently have access to this note.</p>
+  </ng-template>
+</div>

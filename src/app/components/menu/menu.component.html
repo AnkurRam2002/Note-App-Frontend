@@ -1,0 +1,19 @@
+<div class="w-64 bg-gray-800 text-white h-screen flex flex-col py-6 px-4">
+  <h2 class="text-2xl font-bold mb-8 text-center">📒 Notes App</h2>
+
+  <nav class="flex flex-col gap-4 flex-1">
+    <!-- Notes visible to everyone -->
+    <a routerLink="/menu/notes" class="hover:bg-gray-700 rounded px-3 py-2">📝 Notes</a>
+
+    <!-- Manager & Admin only -->
+    <ng-container *ngIf="role === 'manager' || role === 'admin'">
+      <a routerLink="/menu/dashboard" class="hover:bg-gray-700 rounded px-3 py-2">📊 Dashboard</a>
+      <a routerLink="/menu/users" class="hover:bg-gray-700 rounded px-3 py-2">👤 Users</a>
+      <a routerLink="/menu/roles" class="hover:bg-gray-700 rounded px-3 py-2">🔐 Roles</a>
+    </ng-container>
+
+    <a routerLink="/" class="hover:bg-gray-700 rounded px-3 py-2">🏠 Home</a>
+  </nav>
+</div>
+
+

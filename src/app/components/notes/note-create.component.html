@@ -1,0 +1,7 @@
+<div class="p-8">
+  <h2 class="text-2xl font-bold mb-4">Create Note</h2>
+  <input class="border w-full mb-4 p-2 rounded" [(ngModel)]="title" placeholder="Title" />
+  <textarea class="border w-full mb-4 p-2 rounded" [(ngModel)]="content" placeholder="Content"></textarea>
+  <input class="border w-full mb-4 p-2 rounded" [(ngModel)]="tags" placeholder="Tags (comma separated)" />
+  <button (click)="saveNote()" class="bg-blue-600 text-white p-2 rounded">Save</button>
+</div>
