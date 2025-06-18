@@ -1,0 +1,26 @@
+<div class="p-6">
+  <h2 class="text-2xl font-bold mb-4 text-black">👥 All Users</h2>
+
+  <div *ngIf="users.length; else noUsers">
+    <table class="w-full text-left text-white border-collapse">
+      <thead>
+        <tr class="border-b border-gray-600">
+          <th class="py-2 px-4 text-black">Name</th>
+          <th class="py-2 px-4 text-black">Email</th>
+          <th class="py-2 px-4 text-black">Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users" class="border-b border-gray-700 hover:bg-gray-300">
+          <td class="py-2 px-4 text-gray-700">{{ user.name }}</td>
+          <td class="py-2 px-4 text-gray-700">{{ user.email }}</td>
+          <td class="py-2 px-4 capitalize text-gray-700">{{ user.role }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noUsers>
+    <p class="text-white">📭 No users found.</p>
+  </ng-template>
+</div>

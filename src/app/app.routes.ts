@@ -10,6 +10,7 @@ import { NoteEditComponent } from './components/notes/note-edit.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { UsersComponent } from './components/menu/users.component';
 import { AuthGuard } from './guards/auth.guard';
 
 
@@ -18,8 +19,11 @@ export const routes: Routes = [
     path: 'menu',
     component: LayoutComponent,
     children: [
+      { path: '', redirectTo: 'notes', pathMatch: 'full' },
       { path: 'notes', component: NoteListComponent, canActivate: [AuthGuard] },
-      { path: 'dashboard', component: AnalyticsComponent, canActivate: [AuthGuard] }
+      { path: 'dashboard', component: AnalyticsComponent, canActivate: [AuthGuard] },
+      { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
+
     ]
   },
   { path: '', component: HomeComponent },
