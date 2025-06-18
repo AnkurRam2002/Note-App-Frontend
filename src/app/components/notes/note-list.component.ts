@@ -17,6 +17,7 @@ export class NoteListComponent implements OnInit {
   paginatedNotes: any[] = [];
   userId: string = '';
   currentUserRole: string = '';
+  role: string | null = null;
 
   searchTerm: string = '';
 
@@ -29,6 +30,7 @@ export class NoteListComponent implements OnInit {
     this.userId = this.auth.getCurrentUserId() || '';
     this.currentUserRole = this.auth.getCurrentUserRole() || '';
     console.log('Current User ID:', this.userId);
+    this.role = this.auth.getCurrentUserRole();
     this.getNotes();
   }
 

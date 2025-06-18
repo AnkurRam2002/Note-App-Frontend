@@ -33,14 +33,14 @@
 
         <!-- Actions -->
         <div class="flex flex-wrap gap-2">
-          <ng-container *ngIf="hasWritePermission(note) || isOwner(note)">
+          <ng-container *ngIf="hasWritePermission(note) || isOwner(note) || currentUserRole === 'admin'">
             <button (click)="confirmDelete(note._id)"
               class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-lg transition">🗑 Delete</button>
             <a [routerLink]="['/notes/edit', note._id]"
               class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg transition">✏️ Edit</a>
           </ng-container>
 
-          <ng-container *ngIf="isOwner(note)">
+          <ng-container *ngIf="isOwner(note) || currentUserRole === 'admin'">
             <a [routerLink]="['/notes/share', note._id]"
               class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg transition">🔗 Share</a>
             <a [routerLink]="['/manage-sharing', note._id]"
