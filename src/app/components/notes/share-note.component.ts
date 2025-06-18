@@ -24,7 +24,7 @@ export class ShareNoteComponent implements OnInit {
 
   shareNote() {
     this.api.shareNote(this.noteId, this.selectedUserId, this.permission, this.noteId).subscribe(() => {
-      this.router.navigate(['/notes']);
+      this.router.navigate(['/menu/notes']);
     });
   }
 }
