@@ -20,6 +20,6 @@ export class NoteCreateComponent {
   saveNote() {
     const tagsArray = this.tags.split(',').map(tag => tag.trim());
     this.api.createNote({ title: this.title, content: this.content, tags: tagsArray })
-      .subscribe(() => this.router.navigate(['/notes']));
+      .subscribe(() => this.router.navigate(['/menu/notes']));
   }
 }
