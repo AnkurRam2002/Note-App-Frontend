@@ -52,12 +52,12 @@
       <!-- Pagination -->
       <div class="flex justify-between items-center mt-6 text-white">
         <button (click)="prevPage()" [disabled]="currentPage === 1"
-          class="px-4 py-2 border rounded-lg hover:bg-white hover:text-gray-800 disabled:opacity-50">⬅️ Prev</button>
+          class="px-4 py-2 border rounded-lg bg-white text-gray-800 disabled:opacity-50">⬅️ Prev</button>
 
         <span>Page {{ currentPage }} of {{ totalPages() }}</span>
 
         <button (click)="nextPage()" [disabled]="currentPage === totalPages()"
-          class="px-4 py-2 border rounded-lg hover:bg-white hover:text-gray-800 disabled:opacity-50">Next ➡️</button>
+          class="px-4 py-2 border rounded-lg bg-white text-gray-800 disabled:opacity-50">Next ➡️</button>
       </div>
     </div>
 
