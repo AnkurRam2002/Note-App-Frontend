@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'http://localhost:3000/api'
+  apiUrl: 'https://note-app-backend-hfd8.onrender.com/api',
 };
