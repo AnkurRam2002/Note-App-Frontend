@@ -19,9 +19,14 @@ export class RolesComponent implements OnInit {
   }
 
   loadUsers() {
-    this.api.getUsers().subscribe({
-      next: (data) => this.users = data,
-      error: (err) => console.error(err)
+  this.api.getUsers().subscribe({
+    next: (data) => {
+      this.users = data.map(user => ({
+        ...user,
+        newRole: user.role // pre-fill dropdown with current role
+      }));
+    },
+    error: (err) => console.error(err)
     });
   }
 

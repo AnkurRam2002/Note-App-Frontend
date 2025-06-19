@@ -25,21 +25,15 @@ export const routes: Routes = [
       { path: 'dashboard', component: AnalyticsComponent, canActivate: [AuthGuard] },
       { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
       { path: 'roles', component: RolesComponent, canActivate: [AuthGuard] }
-
-
     ]
   },
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  
   { path: 'notes/new', component: NoteCreateComponent, canActivate: [AuthGuard] },
   { path: 'manage-sharing/:id', component: ShareManagementComponent, canActivate: [AuthGuard] },
-  { path: 'notes/:id/edit', component: NoteCreateComponent, canActivate: [AuthGuard] },
-  //{ path: 'notes/:id', component: NoteCreateComponent, canActivate: [AuthGuard] },
   { path: 'notes/share/:id', component: ShareNoteComponent, canActivate: [AuthGuard] },
-  
   { path: 'notes/edit/:id', component: NoteEditComponent, canActivate: [AuthGuard] },
-  { path: '**', redirectTo: '' },// Wildcard route for a 404 page
+  { path: '**', redirectTo: '' },
 ];
 

@@ -70,7 +70,7 @@ export class ApiService {
 }
 
 updateUserRole(userId: string, newRole: string) {
-  return this.http.post(`${this.apiUrl}/notes/update-user-role`, { userId, newRole });
+  return this.http.put(`${this.apiUrl}/notes/update-user-role`, { userId, newRole });
 }
 
 
