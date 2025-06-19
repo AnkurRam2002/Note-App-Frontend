@@ -54,7 +54,7 @@ export class ApiService {
 
    // Get users with whom the note is shared
   getSharedUsers(noteId: string) {
-    return this.http.get<any[]>(`${this.apiUrl}/notes/${noteId}/shared-users/${noteId}`);
+    return this.http.get<any[]>(`${this.apiUrl}/notes/${noteId}/shared-users`);
   }
 
   // Revoke a user's access to a note
