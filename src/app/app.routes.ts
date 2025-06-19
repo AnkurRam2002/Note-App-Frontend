@@ -12,6 +12,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { UsersComponent } from './components/menu/users.component';
 import { RolesComponent } from './components/menu/roles.component';
+import { ViewNoteComponent } from './components/notes/view-note.component';
 import { AuthGuard } from './guards/auth.guard';
 
 
@@ -24,7 +25,8 @@ export const routes: Routes = [
       { path: 'notes', component: NoteListComponent, canActivate: [AuthGuard] },
       { path: 'dashboard', component: AnalyticsComponent, canActivate: [AuthGuard] },
       { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
-      { path: 'roles', component: RolesComponent, canActivate: [AuthGuard] }
+      { path: 'roles', component: RolesComponent, canActivate: [AuthGuard] },
+      { path: 'notes/view/:id', component: ViewNoteComponent, canActivate: [AuthGuard] },
     ]
   },
   { path: '', component: HomeComponent },
