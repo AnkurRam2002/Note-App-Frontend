@@ -61,4 +61,17 @@ export class ApiService {
   revokeShare(noteId: string, userId: string) {
     return this.http.delete(`${this.apiUrl}/notes/${noteId}/share/${userId}`);
   }
+
+  updateSharePermission(noteId: string, userId: string, permission: string) {
+  return this.http.post(`${this.apiUrl}/notes/${noteId}/update-share-permission`, {
+    userId,
+    permission
+  });
+}
+
+updateUserRole(userId: string, newRole: string) {
+  return this.http.post(`${this.apiUrl}/notes/update-user-role`, { userId, newRole });
+}
+
+
 }

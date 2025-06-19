@@ -58,7 +58,7 @@ export class NoteListComponent implements OnInit {
   }
 
   isOwner(note: any): boolean {
-    return note.owner === this.userId;
+    return note.owner._id === this.userId;
   }
 
   // 🔍 Filter notes based on search

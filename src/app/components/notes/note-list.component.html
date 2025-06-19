@@ -2,7 +2,7 @@
   <div class="p-6 max-w-4xl w-full mx-auto">
     <div class="flex justify-between items-center mb-4">
       <h2 class="text-2xl font-bold text-black">My Notes</h2>
-       <a *ngIf="currentUserRole === 'manager' || currentUserRole === 'admin'"
+       <a
      [routerLink]="['/notes/new']"
      class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded shadow">
     + New Note
