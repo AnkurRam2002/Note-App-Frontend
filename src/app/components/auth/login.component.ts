@@ -17,9 +17,18 @@ export class LoginComponent {
   constructor(private auth: AuthService, private router: Router) {}
 
   login() {
+    if (!this.validateEmail(this.email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
     this.auth.login(this.email, this.password).subscribe({
       next: () => this.router.navigate(['/menu']),
       error: err => alert('Login failed')
     });
   }
+
+  validateEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
 }
