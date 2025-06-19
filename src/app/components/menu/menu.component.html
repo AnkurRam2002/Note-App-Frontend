@@ -5,10 +5,12 @@
     <!-- Notes visible to everyone -->
     <a routerLink="/menu/notes" class="hover:bg-gray-700 rounded px-3 py-2">📝 Notes</a>
 
-    <!-- Manager & Admin only -->
     <ng-container *ngIf="role === 'manager' || role === 'admin'">
-      <a routerLink="/menu/dashboard" class="hover:bg-gray-700 rounded px-3 py-2">📊 Dashboard</a>
       <a routerLink="/menu/users" class="hover:bg-gray-700 rounded px-3 py-2">👤 Users</a>
+    </ng-container>
+    <!-- Manager & Admin only -->
+    <ng-container *ngIf="role === 'admin'">
+      <a routerLink="/menu/dashboard" class="hover:bg-gray-700 rounded px-3 py-2">📊 Dashboard</a>
       <a routerLink="/menu/roles" class="hover:bg-gray-700 rounded px-3 py-2">🔐 Roles</a>
     </ng-container>
 
