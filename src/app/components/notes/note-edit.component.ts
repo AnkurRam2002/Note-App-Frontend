@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { QuillModule } from 'ngx-quill';
 import { ApiService } from '../../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-note-edit',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, QuillModule],
   templateUrl: './note-edit.component.html'
 })
 export class NoteEditComponent implements OnInit {
@@ -15,6 +16,16 @@ export class NoteEditComponent implements OnInit {
   title: string = '';
   content: string = '';
   tags: string = '';
+
+  toolbarOptions = [
+    ['bold', 'italic', 'underline', 'strike'],
+    [{ 'header': 1 }, { 'header': 2 }],
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+    [{ 'indent': '-1' }, { 'indent': '+1' }],
+    [{ 'align': [] }],
+    [{ 'color': [] }, { 'background': [] }],
+    ['clean']
+  ];
 
   constructor(
     private api: ApiService,

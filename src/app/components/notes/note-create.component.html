@@ -2,7 +2,8 @@
   <div class="p-8 max-w-xl w-full shadow-md rounded-lg bg-white">
     <h2 class="text-2xl font-bold mb-4">Create Note</h2>
     <input class="border w-full mb-4 p-2 rounded" [(ngModel)]="title" placeholder="Title" />
-    <textarea class="border w-full mb-4 p-2 rounded" [(ngModel)]="content" placeholder="Content"></textarea>
+    <label class="block mb-2">Content</label>
+<quill-editor [(ngModel)]="content" [modules]="{ toolbar: toolbarOptions }" class="bg-white rounded mb-4"></quill-editor>
     <input class="border w-full mb-4 p-2 rounded" [(ngModel)]="tags" placeholder="Tags (comma separated)" />
     <button (click)="saveNote()" class="bg-blue-600 text-white p-2 rounded">Save</button>
   </div>
